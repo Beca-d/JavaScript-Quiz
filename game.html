@@ -17,6 +17,14 @@
         </div>
         <div class="hud-item">
             <p class="hud-prefix">
+                Score
+            </p>
+            <h1 class="hud-main-text" id="score">
+                0
+            </h1>
+        </div>
+        <div class="hud-item">
+            <p class="hud-prefix">
                 Time
             </p>
             <h1 class="hud-main-text" id="timer">
@@ -29,12 +37,12 @@
     <div class="container">
         <div id="game" class="flex-column flex-center">
             <div class="question-box">
-                <div class="question">This is a question</div>
+                <h1 id="question">This is a question</h1>
                 <div class="answers">
-                    <button class="btn" id="a">a)</button>
-                    <button class="btn" id="b">b)</button>
-                    <button class="btn" id="c">c)</button>
-                    <button class="btn" id="d">d)</button>
+                    <button class="btn choice" id="a" data-number="1">a)</button>
+                    <button class="btn choice" id="b"data-number="2">b)</button>
+                    <button class="btn choice" id="c" data-number="3">c)</button>
+                    <button class="btn choice" id="d" data-number="4">d)</button>
                 </div>
             </div>
         </div>
