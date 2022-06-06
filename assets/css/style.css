@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
+
+:root {
+    background-color: rgba(131, 219, 213, 0.815);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tiro Gurmukhi', serif;
+}
+
+.top-features {
+    display: flex;
+    justify-content: right;
+    font-size: 2rem;
+    margin: 25px 50px;
+}
+
+.page-title {
+    text-align: center;
+    align-content: center;
+    margin: 70px 0 50px 0;
+}
+
+.page-title h1 {
+    font-size: 3rem;
+    padding-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 2rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.question-box {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(180, 5%, 4%);
+  font-size: 22px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 300px;
+  padding: 30px 40px;
+  line-height: 1.5;
+}
+
+.info-title {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+#start-btn, #highscore-btn {
+  border: none;
+  background-color: rgb(101, 20, 125);
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+  display: block;
+  font-size: 28px;
+  margin: 40px auto 0 auto;
+  padding: 14px 34px;
+  text-align: center;
+  width: 25rem;
+  cursor: pointer;
+}
+
+#highscore-btn {
+    background-color: rgb(47, 26, 164);
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(4, 7, 0, 0.521);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+@media screen and (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  .btn {
+    font-size: 0.8rem;
+  }
+}

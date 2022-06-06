@@ -20,12 +20,12 @@ var quizQuestions = [
         correctanswer: 'd'
     },
     {
-        question: "What is the output of this code? console.log(1 + "2" + "2");",
+        question: "What does the window.alert() method do?",
         answers: {
-            a: '32',
-            b: '5',
-            c: '122',
-            d: 'NaN'
+            a: 'turn the browser red',
+            b: 'warn the user this website is unsafe',
+            c: 'creates a popup window alert with a message',
+            d: 'refreshes the browser'
         },
         correctanswer: 'c'
     },
@@ -40,7 +40,7 @@ var quizQuestions = [
         correctanswer: 'a'
     },
     {
-        question: "How do you properly callback a function?",
+        question: "How do you properly call a function?",
         answers: {
             a: 'callback function()',
             b: 'function()',
@@ -52,3 +52,29 @@ var quizQuestions = [
 
 ];
 
+const scorePoints = 125
+const maxQuestions = 5
+
+var startQuiz = function() {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...quizQuestions]
+    getNewQuestion()
+}
+
+var getNewQuestion = function() {
+    if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
+        localStorage.setItem(mostRecentScore, score)
+    }
+}
+
+/*var timer = 60;
+var countdown = setInterval(function(){
+    if(timer <=0){
+        clearInterval(countdown);
+        document.getElementById("timer").innerHTML="Finished";
+    } else {
+        document.getElementById("timer").innerHTML = timer + " Seconds Left";
+    }
+    timer -= 1;
+}, 1000);*/

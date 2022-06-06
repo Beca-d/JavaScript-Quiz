@@ -9,13 +9,32 @@
 </head>
 <body>
     <header>
-        <h1 class="page-title">Code Quiz in Javascript</h1>
-        <p>Hit start to test your knowledge!</p>
+        <div class="top-features">
+            <div id="timer">Timer</div>
+        </div>
     </header>
     <main>
-        <p></p>
-        <div>
-            
+        <div class="container">
+            <div id="home-page" class="flex-column flex-center">
+                <div class="page-title">
+                    <h1>Coding Quiz Challenge</h1>
+                    <h2>Hit the "Start Quiz" button below to test your knowledge!</h2>
+                </div>
+                <div class="question-box">
+                    <div class="info-title">
+                        <span>Quiz Rules</span>
+                    </div>
+                    <div class="info-list">
+                        <div class="info">1. You have 60 seconds to complete the quiz</div>
+                        <div class="info">2. Each wrong answer will deduct 10 seconds from the timer</div>
+                        <div class="info">3. Each right answer will be worth 25 points</div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="btn" id="start-btn" type="submit">Start Quiz!</button>
+                    <a href="/highscores.html" class="btn" id="highscore-btn">High Scores</a>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
