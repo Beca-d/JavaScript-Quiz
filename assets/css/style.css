@@ -108,7 +108,6 @@
     border-radius: 5px;
 }
 
-
 .correct {
     background: linear-gradient(32deg, rgba(21, 168, 38) 0%, rgb(21, 168, 38) 100%);
 }
@@ -128,11 +127,22 @@
     font-size: 1rem;
 }
 
+#question, .hud-prefix{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    flex-wrap: wrap;
+    word-spacing: 3px;
+}
+
 .hud-main-text {
     text-align: center;
 }
 
-
+.exit {
+    justify-content: space-around;
+    font-size: 25px;
+}
 
 @media screen and (max-width: 690px) {
   .btn {

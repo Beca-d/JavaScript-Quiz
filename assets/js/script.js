@@ -70,7 +70,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign("/end.html")
+        return window.location.assign("/finished.html")
     }
 
     questionCounter++
@@ -130,15 +130,14 @@ timeChange = num => {
 startQuiz()
 console.log(currentQuestion.answer)
 
-//else { 
-    //deduct 10 seconds from timer
-//}
-
-var timer = 150;
+var timer = 100;
 var countdown = setInterval(function(){
     if(timer <=0){
         clearInterval(countdown);
         document.getElementById("timer").innerHTML="Finished";
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign("/finished.html")
     } else {
         document.getElementById("timer").innerHTML = timer + " Seconds Left";
     }
