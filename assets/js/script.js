@@ -1,8 +1,9 @@
 const question = document.querySelector('#question')
 const progressText = document.querySelector('#progressText')
-const timer = document.querySelector('#timer')
+const timeText = document.querySelector('#timer')
 const scoreText = document.querySelector('#score')
 const answerChoices = Array.from(document.querySelectorAll('.choice-text'))
+const button = document.querySelector('.option')
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -12,55 +13,57 @@ let availableQuestions = []
 
 let quizQuestions = [
     {
-        question: "What is the output of this code? console.log(typeof typeof 1);",
+        question: 'What is the output of this code? console.log(typeof typeof 1);',
         choice1: 'string',
         choice2: 'true',
         choice3: 'number',
         choice4: '1',
-        answer: 'a'
+        answer: 1,
     },
     {
-        question: "Arrays in java are:",
+        question: 'Arrays in java are:',
         choice1: 'Null values',
         choice2: 'numbers',
         choice3: 'object references',
         choice4: 'objects',
-        answer: 'd'
+        answer: 3,
     },
     {
-        question: "What does the window.alert() method do?",
+        question: 'What does the window.alert() method do?',
         choice1: 'turn the browser red',
         choice2: 'warn the user this website is unsafe',
         choice3: 'creates a popup window alert with a message',
         choice4: 'refreshes the browser',
-        answer: 'c'
+        answer: 3,
     },
     {
-        question: "JavaScript file has an extension of:",
+        question: 'JavaScript file has an extension of:',
         choice1: '.js',
         choice2: '.java',
         choice3: '.javacript',
         choice4: '.json',
-        answer: 'a'
+        answer: 1,
     },
     {
-        question: "How do you properly call a function?",
+        question: 'How do you properly call a function?',
         choice1: 'callback function()',
         choice2: 'function()',
         choice3: 'function(call)',
         choice4: 'call [function ()]',
-        answer: 'a'
+        answer: 2,
     }
 ]
 
 const scorePoints = 125
 const maxQuestions = 5
+const timeDeduction = -20
 
-startQuiz = () => {
+startQuiz = function () {
     questionCounter = 0
     score = 0
     availableQuestions = [...quizQuestions]
     getNewQuestion()
+    timer = 150
 }
 
 getNewQuestion = () => {
@@ -85,16 +88,7 @@ getNewQuestion = () => {
     availableQuestions.splice(questionsIndex, 1)
 
     acceptingAnswers = true
-};
-
-answerChoices.forEach(choice => {
-    const number = choice.dataset['number']
-    choice.innerText = currentQuestion['choice' + number]
-
-    availableQuestions.splice(questionsIndex, 1)
-
-    acceptingAnswers = true
-})
+}
 
 answerChoices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -110,9 +104,13 @@ answerChoices.forEach(choice => {
             incrementScore(scorePoints)
         } 
         
+        if(classToApply === 'incorrect'){
+            timeChange(timeDeduction)
+        }
+
         selectedChoice.parentElement.classList.add(classToApply)
 
-        setTimeOut (() => {
+        setTimeout (() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
         }, 1000)
@@ -124,13 +122,19 @@ incrementScore = num => {
     scoreText.innerText = score
 }
 
-startGame()
+timeChange = num => {
+    timer +=num
+    timeText.innerText = timer
+}
+
+startQuiz()
+console.log(currentQuestion.answer)
 
 //else { 
     //deduct 10 seconds from timer
 //}
 
-/*var timer = 60;
+var timer = 150;
 var countdown = setInterval(function(){
     if(timer <=0){
         clearInterval(countdown);
@@ -139,4 +143,4 @@ var countdown = setInterval(function(){
         document.getElementById("timer").innerHTML = timer + " Seconds Left";
     }
     timer -= 1;
-}, 1000);*/
+}, 1000);
