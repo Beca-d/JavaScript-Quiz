@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Underway</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/game.css">
+</head>
+<header>
+    <div id="hud">
+        <div class="hud-item">
+            <p id="progressText" class="hud-prefix">
+                Question
+            </p>
+        </div>
+        <div class="hud-item">
+            <p class="hud-prefix">
+                Time
+            </p>
+            <h1 class="hud-main-text" id="timer">
+                60
+            </h1>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div id="game" class="flex-column flex-center">
+            <div class="question-box">
+                <div class="question">This is a question</div>
+                <div class="answers">
+                    <button class="btn" id="a">a)</button>
+                    <button class="btn" id="b">b)</button>
+                    <button class="btn" id="c">c)</button>
+                    <button class="btn" id="d">d)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

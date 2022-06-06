@@ -60,13 +60,18 @@ var startQuiz = function() {
     score = 0
     availableQuestions = [...quizQuestions]
     getNewQuestion()
-}
+};
 
 var getNewQuestion = function() {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem(mostRecentScore, score)
+
+        return window.location.assig("/end.html")
     }
-}
+
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter}`
+};
 
 /*var timer = 60;
 var countdown = setInterval(function(){
