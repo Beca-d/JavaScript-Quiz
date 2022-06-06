@@ -37,12 +37,24 @@
     <div class="container">
         <div id="game" class="flex-column flex-center">
             <div class="question-box">
-                <h1 id="question">This is a question</h1>
+                <div id="question">This is a question</div>
                 <div class="answers">
-                    <button class="btn choice" id="a" data-number="1">a)</button>
-                    <button class="btn choice" id="b"data-number="2">b)</button>
-                    <button class="btn choice" id="c" data-number="3">c)</button>
-                    <button class="btn choice" id="d" data-number="4">d)</button>
+                    <button class="btn">
+                        <p class="choice-prefix">a)</p>
+                        <p class="choice-text" data-number="1">Choice 1</p>
+                    </button>
+                    <button class="btn">
+                        <p class="choice-prefix">a)</p>
+                        <p class="choice-text" data-number="2">Choice 2</p>
+                    </button>
+                    <button class="btn">
+                        <p class="choice-prefix">a)</p>
+                        <p class="choice-text" data-number="3">Choice 3</p>
+                    </button>
+                    <button class="choice-container btn">
+                        <p class="choice-prefix">a)</p>
+                        <p class="choice-text" data-number="4">Choice 4</p>
+                    </button>
                 </div>
             </div>
         </div>

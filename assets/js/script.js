@@ -2,7 +2,7 @@ const question = document.querySelector('#question')
 const progressText = document.querySelector('#progressText')
 const timer = document.querySelector('#timer')
 const scoreText = document.querySelector('#score')
-const answerChoices = Array.from(document.querySelectorAll('.choice'))
+const answerChoices = Array.from(document.querySelectorAll('.choice-text'))
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -16,7 +16,7 @@ let quizQuestions = [
         choice1: 'string',
         choice2: 'true',
         choice3: 'number',
-        choice4: '1'
+        choice4: '1',
         answer: 'a'
     },
     {
@@ -24,7 +24,7 @@ let quizQuestions = [
         choice1: 'Null values',
         choice2: 'numbers',
         choice3: 'object references',
-        choice4: 'objects'
+        choice4: 'objects',
         answer: 'd'
     },
     {
@@ -32,7 +32,7 @@ let quizQuestions = [
         choice1: 'turn the browser red',
         choice2: 'warn the user this website is unsafe',
         choice3: 'creates a popup window alert with a message',
-        choice4: 'refreshes the browser'
+        choice4: 'refreshes the browser',
         answer: 'c'
     },
     {
@@ -40,7 +40,7 @@ let quizQuestions = [
         choice1: '.js',
         choice2: '.java',
         choice3: '.javacript',
-        choice4: '.json'
+        choice4: '.json',
         answer: 'a'
     },
     {
@@ -48,23 +48,22 @@ let quizQuestions = [
         choice1: 'callback function()',
         choice2: 'function()',
         choice3: 'function(call)',
-        choice4: 'call [function ()]'
+        choice4: 'call [function ()]',
         answer: 'a'
     }
-
-];
+]
 
 const scorePoints = 125
 const maxQuestions = 5
 
-var startQuiz = function() {
+startQuiz = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [...quizQuestions]
     getNewQuestion()
-};
+}
 
-var getNewQuestion = function() {
+getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score)
 
@@ -95,7 +94,7 @@ answerChoices.forEach(choice => {
     availableQuestions.splice(questionsIndex, 1)
 
     acceptingAnswers = true
-}
+})
 
 answerChoices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -113,7 +112,7 @@ answerChoices.forEach(choice => {
         
         selectedChoice.parentElement.classList.add(classToApply)
 
-        setTimeot (() => {
+        setTimeOut (() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
         }, 1000)
