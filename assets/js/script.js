@@ -128,7 +128,6 @@ timeChange = num => {
 }
 
 startQuiz()
-console.log(currentQuestion.answer)
 
 var timer = 100;
 var countdown = setInterval(function(){
