@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Underway</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<header>
+    <div id="hud">
+        <div class="hud-item">
+            <p id="progressText" class="hud-prefix">
+                Question
+            </p>
+        </div>
+        <div class="hud-item">
+            <p class="hud-prefix">
+                Score
+            </p>
+            <h1 class="hud-main-text" id="score">
+                0
+            </h1>
+        </div>
+        <div class="hud-item">
+            <p class="hud-prefix">
+                Time
+            </p>
+            <h1 class="hud-main-text" id="timer">
+                100
+            </h1>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div id="game" class="flex-column flex-center">
+            <div class="question-box">
+                <div id="question">This is a question</div>
+                <div class="answers">
+                    <button class="btn option">
+                        <p class="choice-text" data-number="1">Choice 1</p>
+                    </button>
+                    <button class="btn option">
+                        <p class="choice-text" data-number="2">Choice 2</p>
+                    </button>
+                    <button class="btn option">
+                        <p class="choice-text" data-number="3">Choice 3</p>
+                    </button>
+                    <button class="btn option">
+                        <p class="choice-text" data-number="4">Choice 4</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="exit">
+        <a class="exit-link" href="/index.html">Exit Quiz</a>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

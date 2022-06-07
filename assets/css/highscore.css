@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    color: rgb(233, 39, 0);
+}
+
+#finalScore {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
